@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+
+
+logging:
+  level:
+    isedu.toy : debug
+    org.springframework: info
+    org.hibernate.SQL: off
+    org.hibernate.type.descriptor.sql.BasicBinder: off
