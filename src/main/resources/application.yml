@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;MODE=MySQL;DB_CLOSE_DELAY=-1;
+    username: sa
+    password:
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    isedu.toy : debug
+    org.springframework: info
+    org.springframework.orm.jpa: debug
+    org.hibernate.type.descriptor.sql : trace
+
+server:
+  port: 7500
+
