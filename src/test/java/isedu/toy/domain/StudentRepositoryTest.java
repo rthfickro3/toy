@@ -30,7 +30,7 @@ class StudentRepositoryTest {
     @Order(2)
     @Test
     void findById() {
-        Student student = studentRepository.findById(1L);
+        Student student = studentRepository.findById(0L);
         log.debug("student = {}", student);
         assertThat(student).isNotNull();
         assertThat(student.getId()).isEqualTo(1L);
@@ -38,6 +38,6 @@ class StudentRepositoryTest {
         assertThat(student.getRegId()).isEqualTo(1L);
         assertThat(student.getRegDt()).isNotNull();
         assertThat(student.getUpdId()).isEqualTo(1L);
-        assertThat(student.getUpdDt()).isNotNull();
+        assertThat(student.getUpdDt()).isNull();
     }
 }

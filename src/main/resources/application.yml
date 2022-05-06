@@ -4,20 +4,27 @@ spring:
     url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;MODE=MySQL;DB_CLOSE_DELAY=-1;
     username: sa
     password:
-
   jpa:
     generate-ddl: true
     hibernate:
       ddl-auto: create-drop
+    show-sql: true
+  sql:
+    init:
+      schema-locations: classpath:init-schema.sql
 
 logging:
   level:
     isedu.toy : debug
-    org.springframework: info
+    org.springframework: debug
     org.springframework.orm.jpa: debug
     org.hibernate.SQL: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: false
 
 server:
   port: 7500
